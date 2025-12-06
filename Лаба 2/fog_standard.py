@@ -22,7 +22,7 @@ def simulate(n_tasks=30, seed=7):
     random.seed(seed)
     # Processing times (ms) per stage / Времена обработки (мс) на каждом этапе:
     sensor  = [random.randint(20, 60) for _ in range(n_tasks)]   # Sensor / Датчик
-    fog     = [random.randint(30, 80) for _ in range(n_tasks)]   # Fog node / Fog‑узел
+    fog     = [random.randint(10, 40) for _ in range(n_tasks)]   # Fog node / Fog‑узел
     courier = [random.randint(10, 40) for _ in range(n_tasks)]   # Courier / Курьер
 
     # End‑to‑end latency per task is the sum of stage times:
@@ -31,7 +31,7 @@ def simulate(n_tasks=30, seed=7):
 
     # Phone buffer: phone "reads" messages every read_interval_ms
     # Буфер телефона: телефон "читает" сообщения каждые read_interval_ms
-    read_interval_ms = 120
+    read_interval_ms = 200
     time = 0
     buffer_sizes = []
     buf = 0
